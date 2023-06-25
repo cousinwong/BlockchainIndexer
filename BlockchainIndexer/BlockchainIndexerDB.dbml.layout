@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BlockchainIndexerDB">
+  <DataContextMoniker Name="/BlockchainIndexerDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1d1f15ca-489b-41f2-9351-beed534c0989" absoluteBounds="5.5, 1.25, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/BlockchainIndexerDBDataContext/block" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e5348757-4a48-4d3e-b6b4-93e50be8bcc7" absoluteBounds="5.515, 1.71, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="776725d3-ad23-4c89-8d24-0dcb7cf2e2a7" absoluteBounds="5.5, 4.375, 2, 2.5401025390624996">
+      <DataClassMoniker Name="/BlockchainIndexerDBDataContext/transaction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bfddc321-c1d5-4473-8786-195d31dad6be" absoluteBounds="5.515, 4.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.5 : 3.59780110677083); (6.5 : 4.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BlockchainIndexerDBDataContext/block/block_transaction" />
+      <nodes>
+        <classShapeMoniker Id="1d1f15ca-489b-41f2-9351-beed534c0989" />
+        <classShapeMoniker Id="776725d3-ad23-4c89-8d24-0dcb7cf2e2a7" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

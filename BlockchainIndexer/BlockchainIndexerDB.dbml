@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Class="BlockchainIndexerDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="" Member="blocks">
+    <Type Name="block">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="block_number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hash" Type="System.String" DbType="VarChar(66) NOT NULL" CanBeNull="false" />
+      <Column Name="parent_hash" Type="System.String" DbType="VarChar(66) NOT NULL" CanBeNull="false" />
+      <Column Name="miner" Type="System.String" DbType="VarChar(42) NOT NULL" CanBeNull="false" />
+      <Column Name="block_reward" Type="System.Decimal" DbType="Decimal(38,2) NULL" CanBeNull="true" />
+      <Column Name="gas_limit" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="gas_used" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Association Name="block_transaction" Member="transactions" ThisKey="id" OtherKey="block_id" Type="transaction" />
+    </Type>
+  </Table>
+  <Table Name="" Member="transactions">
+    <Type Name="transaction">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="block_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hash" Type="System.String" DbType="VarChar(66) NOT NULL" CanBeNull="false" />
+      <Column Name="from" Type="System.String" DbType="VarChar(42) NOT NULL" CanBeNull="false" />
+      <Column Name="to" Type="System.String" DbType="VarChar(42) NOT NULL" CanBeNull="false" />
+      <Column Name="value" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="gas" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="gas_price" Type="System.Decimal" DbType="Decimal(38,2) NOT NULL" CanBeNull="false" />
+      <Column Name="transaction_index" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="block_transaction" Member="block" ThisKey="block_id" OtherKey="id" Type="block" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
